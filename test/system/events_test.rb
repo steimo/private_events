@@ -17,7 +17,7 @@ class EventsTest < ApplicationSystemTestCase
     fill_in "Description", with: @event.description
     fill_in "End time", with: @event.end_time
     fill_in "Location", with: @event.location
-    fill_in "Name", with: @event.name
+    fill_in "Title", with: @event.title
     fill_in "Start time", with: @event.start_time
     click_on "Create Event"
 
@@ -32,7 +32,7 @@ class EventsTest < ApplicationSystemTestCase
     fill_in "Description", with: @event.description
     fill_in "End time", with: @event.end_time
     fill_in "Location", with: @event.location
-    fill_in "Name", with: @event.name
+    fill_in "Title", with: @event.title
     fill_in "Start time", with: @event.start_time
     click_on "Update Event"
 
