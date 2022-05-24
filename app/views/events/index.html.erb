@@ -1,15 +1,15 @@
 <!---->
 <!---->
 <div id="events">
-  <% @events.each do |event| %>
-<div class="container  my-12 mx-auto px-4 md:px-12">
+<div class="container  my-12 mx-auto px-2 md:px-12">
   <div class="flex flex-wrap -mx-1 lg:-mx-4">
-    <!-- <%= render event %> -->
-  </div>
-</div>
+  <% @events.each do |event| %>
+    <%= render event %>
     <p>
     </p>
   <% end %>
+</div>
+  </div>
 </div>
 <!---->
 <!-- <%= link_to "New event", new_event_path %> -->
