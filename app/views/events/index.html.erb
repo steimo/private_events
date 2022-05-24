@@ -1,14 +1,38 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Events</h1>
-
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
+<!-- <p style="color: green"><%= notice %></p> -->
+<!---->
+<!-- <h1>Events</h1> -->
+<!---->
+<!-- <div id="events"> -->
+<!--   <% @events.each do |event| %> -->
+<!--     <%= render event %> -->
+<!--     <p> -->
+<!--       <%= link_to "Show this event", event %> -->
+<!--     </p> -->
+<!--   <% end %> -->
+<!-- </div> -->
+<!---->
+<!-- <%= link_to "New event", new_event_path %> -->
+<!---->
+<!-- <h1 class="text-3xl font-bold underline"> -->
+<!--     Hello world! -->
+<!-- </h1> -->
+<div class="header-2">
+  <nav class="bg-white py-2 md:py-4">
+    <div class="container px-4 mx-auto md:flex md:items-center">
+      <div class="flex justify-between items-center">
+        <a href="#" class="font-bold text-xl text-teal-800">Events</a>
+        <button type="button" id="navbar-toggle" class="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-800" @click="toggle" @mousedown="if (open) $event.preventDefault()" aria-expanded="false" :aria-expanded="open.toString()">
+          <span class="sr-only">Open menu</span>
+          <svg class="h-6 w-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" id="navbar-collapse">
+        <a href="#" class="p-2 lg:px-4 md:mx-2 text-white rounded bg-teal-800">About</a>
+        <a href="#" class="p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-transparent rounded hover:bg-teal-100 hover:text-teal-800 transition-colors duration-300">Login</a>
+        <a href="#" class="p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1">Signup</a>
+      </div>
+    </div>
+  </nav>
 </div>
-
-<%= link_to "New event", new_event_path %>
