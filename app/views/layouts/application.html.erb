@@ -63,8 +63,8 @@
                     <li role="menuitem" tabindex="-1" id="menu-item-1">
                       <%= link_to "My Events", user_events_path(current_user.id), class:"rounded-b bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold py-2 px-4 block whitespace-no-wrap" %>
                     </li>
-                  </ul>
-                </div>
+                  </div>
+                </ul>
               </div>
               <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1" %>
             <% else %>
