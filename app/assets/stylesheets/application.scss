@@ -19,3 +19,12 @@ body {
   background: #eee;
 }
 
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+

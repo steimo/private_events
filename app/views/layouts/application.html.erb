@@ -50,7 +50,22 @@
           </div>
           <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" id="navbar-collapse">
             <% if user_signed_in? %>
-              <%= link_to current_user.email, edit_user_registration_path, class: "p-2 lg:px-4 md:mx-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-4 py-2 rounded" %>
+              <div class="dropdown inline-block relative">
+                <button class="p-2 lg:px-4 md:mx-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-4 py-2 rounded inline-flex items-center">
+                  <span class="mr-1"><%= current_user.email %></span>
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
+                </button>
+                <ul class="dropdown-menu hidden text-gray-700 pt-1">
+                  <div class="absolute p-2 w-full inline-block" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <li role="menuitem" tabindex="-1" id="menu-item-0">
+                      <%= link_to "My Profile", edit_user_registration_path, class:"bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold py-2 px-4 block whitespace-no-wrap" %>
+                    </li>
+                    <li role="menuitem" tabindex="-1" id="menu-item-1">
+                      <%= link_to "My Events", user_events_path(current_user.id), class:"rounded-b bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold py-2 px-4 block whitespace-no-wrap" %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1" %>
             <% else %>
               <%= link_to 'Log In', new_user_session_path, class: "p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-transparent rounded hover:bg-teal-100 hover:text-teal-800 transition-colors duration-300" %>

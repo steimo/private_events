@@ -10,6 +10,10 @@ class EventsController < ApplicationController
   # GET /events/1 or /events/1.json
   def show; end
 
+  def user_events
+  @events = Event.where(creator_id: params[:user_id])
+end
+
   # GET /events/new
   def new
   @event = current_user.created_events.build
