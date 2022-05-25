@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "events#index"
-  get 'users/:user_id/created_events' => 'events#user_events', as: :user_events
+  get 'users/:user_id/created_events' => 'users#created_events', as: :user_events
 end
