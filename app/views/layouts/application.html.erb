@@ -34,14 +34,14 @@
         </div>
       </div>
     <% end %>
-    <div class="header-2 h-24 ">
-      <nav class="bg-white py-2 md:py-4">
+    <div class="header-2 h-24 relative">
+      <nav class="bg-gray-100 shadow-lg leading-9 font-bold py-2 md:py-4">
         <div class="container px-4 mx-auto md:flex md:items-center">
           <div class="flex justify-between items-center">
-            <%= link_to root_path, class: "font-bold text-xl text-teal-800", data: { turbo: false} do %>
-              <h1 class="align-middle text-4xl font-extrabold bg-gradient-to-r from-teal-400 to-blue-800 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-4 py-2 rounded">Events</h1>
+            <%= link_to root_path, class: " text-xl", data: { turbo: false} do %>
+              <h1 class="align-middle text-4xl font-extrabold bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-4 py-2 rounded-2xl">Events</h1>
             <% end %>
-            <button type="button" id="navbar-toggle" class="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-800" aria-expanded="false" :aria-expanded="open.toString()">
+            <button type="button" id="navbar-toggle" class="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-600" aria-expanded="false" :aria-expanded="open.toString()">
               <span class="sr-only">Open menu</span>
               <svg class="h-6 w-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -51,30 +51,41 @@
           <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" id="navbar-collapse">
             <% if user_signed_in? %>
               <div class="dropdown inline-block relative">
-                <button class="p-2 lg:px-4 md:mx-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-4 py-2 rounded inline-flex items-center">
+                <button class="p-2 lg:px-4 md:mx-2 bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white font-semibold px-4 py-2 rounded-xl inline-flex items-center">
                   <span class="mr-1"><%= current_user.name %></span>
                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
                 </button>
                 <ul class="dropdown-menu hidden text-gray-700 pt-1">
                   <div class="absolute p-2 w-full inline-block" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                     <li role="menuitem" tabindex="-1" id="menu-item-0">
-                      <%= link_to "My Profile", edit_user_registration_path, class:"bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold py-2 px-4 block whitespace-no-wrap" %>
+                      <%= link_to "My Profile", edit_user_registration_path, class:"text-orange-600 text-center bg-white rounded-t-lg border border-solid border-orange-500 hover:bg-orange-600 hover:text-white transition-colors duration-300 font-semibold py-2 px-4 block whitespace-no-wrap" %>
                     </li>
                     <li role="menuitem" tabindex="-1" id="menu-item-1">
-                      <%= link_to "My Events", user_events_path(current_user.id), class:"rounded-b bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold py-2 px-4 block whitespace-no-wrap" %>
+                      <%= link_to "My Events", user_events_path(current_user.id), class:"text-orange-600 rounded-b-lg text-center bg-white border border-solid border-orange-500 hover:bg-orange-600 hover:text-white transition-colors duration-300 font-semibold py-2 px-4 block whitespace-no-wrap" %>
                     </li>
                   </div>
                 </ul>
               </div>
-              <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1" %>
+              <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"p-2 lg:px-4 md:mx-2 text-orange-600 text-center border border-solid border-orange-500 rounded-xl hover:bg-orange-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1" %>
             <% else %>
-              <%= link_to 'Log In', new_user_session_path, class: "p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-transparent rounded hover:bg-teal-100 hover:text-teal-800 transition-colors duration-300", data: { turbo: "false" } %>
-              <%= link_to 'Sign Up', new_user_registration_path, class: "p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1", data: { turbo: "false" } %>
+              <%= link_to 'Log In', new_user_session_path, class: "p-2 lg:px-4 md:mx-2 text-orange-600 text-center border border-transparent rounded hover:bg-orange-100 hover:text-orange-600 transition-colors duration-300", data: { turbo: "false" } %>
+              <%= link_to 'Sign Up', new_user_registration_path, class: "p-2 lg:px-4 md:mx-2 text-orange-600 text-center border border-solid border-orange-500 rounded hover:bg-orange-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1", data: { turbo: "false" } %>
             <% end %>
           </div>
         </div>
       </nav>
+      <!-- Hero section starts -->
+      <% if (params[:action] == 'index') %>
+        <section class="flex h-96 object-below bg-center bg-[url('https://images.unsplash.com/photo-1535430046985-b806390339ba?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2063')]">
+          <div class="container mx-auto flex justify-center items-center flex-col">
+            <h1 class="text-white text-6xl md:text-6xl font-extrabold text-center w-1/2">
+              Launch your dream event now.
+            </h1>
+            <%= link_to "Create Event", new_event_path, class:"px-6 py-2 mt-9 text-white font-bold text-center border bg-orange-600 border-solid border-orange-500 rounded-2xl hover:bg-orange-700 hover:text-white transition-colors duration-300" %>
+          </div>
+        </section>
+      <% end %>
+      <%= yield %>
     </div>
-    <%= yield %>
   </body>
 </html>
