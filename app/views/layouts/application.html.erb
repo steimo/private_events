@@ -52,7 +52,7 @@
             <% if user_signed_in? %>
               <div class="dropdown inline-block relative">
                 <button class="p-2 lg:px-4 md:mx-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-4 py-2 rounded inline-flex items-center">
-                  <span class="mr-1"><%= current_user.email %></span>
+                  <span class="mr-1"><%= current_user.name %></span>
                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
                 </button>
                 <ul class="dropdown-menu hidden text-gray-700 pt-1">
@@ -68,8 +68,8 @@
               </div>
               <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1" %>
             <% else %>
-              <%= link_to 'Log In', new_user_session_path, class: "p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-transparent rounded hover:bg-teal-100 hover:text-teal-800 transition-colors duration-300" %>
-              <%= link_to 'Sign Up', new_user_registration_path, class: "p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1" %>
+              <%= link_to 'Log In', new_user_session_path, class: "p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-transparent rounded hover:bg-teal-100 hover:text-teal-800 transition-colors duration-300", data: { turbo: "false" } %>
+              <%= link_to 'Sign Up', new_user_registration_path, class: "p-2 lg:px-4 md:mx-2 text-teal-600 text-center border border-solid border-teal-800 rounded hover:bg-teal-800 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1", data: { turbo: "false" } %>
             <% end %>
           </div>
         </div>
