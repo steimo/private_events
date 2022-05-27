@@ -52,6 +52,7 @@ gem 'bootsnap', require: false
 
 gem 'bulma-rails', '~> 0.9.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'file_validators'
 gem 'simple_form', '~> 5.1'
 
 group :development, :test do
@@ -77,8 +78,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'webdrivers'
 end
 
-gem "tailwindcss-rails", "~> 2.0"
+gem 'tailwindcss-rails', '~> 2.0'
