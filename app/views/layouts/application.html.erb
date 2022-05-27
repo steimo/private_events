@@ -41,7 +41,7 @@
             <%= link_to root_path, class: " text-xl", data: { turbo: false} do %>
               <h1 class="align-middle text-4xl font-extrabold bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-4 py-2 rounded-xl">EventLite</h1>
             <% end %>
-            <button type="button" id="navbar-toggle" class="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-600" aria-expanded="false" :aria-expanded="open.toString()">
+            <button type="button" data-turbo="false" id="navbar-toggle" class="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-600" aria-expanded="false" :aria-expanded="open.toString()">
               <span class="sr-only">Open menu</span>
               <svg class="h-6 w-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -58,10 +58,10 @@
                 <ul class="dropdown-menu hidden text-gray-700 pt-1">
                   <div class="absolute p-2 w-full inline-block" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                     <li role="menuitem" tabindex="-1" id="menu-item-0">
-                      <%= link_to "My Profile", edit_user_registration_path, class:"text-orange-600 text-center bg-white rounded-t-lg border border-solid border-orange-500 hover:bg-orange-600 hover:text-white transition-colors duration-300 font-semibold py-2 px-4 block whitespace-no-wrap" %>
+                      <%= link_to "My Profile", edit_user_registration_path, class:"text-orange-600 text-center bg-white rounded-t-lg border border-solid border-orange-500 hover:bg-orange-600 hover:text-white transition-colors duration-300 font-semibold py-2 px-4 block whitespace-no-wrap", data: { turbo: "false" } %>
                     </li>
                     <li role="menuitem" tabindex="-1" id="menu-item-1">
-                      <%= link_to "My Events", user_events_path(current_user.id), class:"text-orange-600 rounded-b-lg text-center bg-white border border-solid border-orange-500 hover:bg-orange-600 hover:text-white transition-colors duration-300 font-semibold py-2 px-4 block whitespace-no-wrap" %>
+                      <%= link_to "My Events", user_events_path(current_user.id), class:"text-orange-600 rounded-b-lg text-center bg-white border border-solid border-orange-500 hover:bg-orange-600 hover:text-white transition-colors duration-300 font-semibold py-2 px-4 block whitespace-no-wrap", data: { turbo: "false" } %>
                     </li>
                   </div>
                 </ul>
