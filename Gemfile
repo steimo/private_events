@@ -54,6 +54,7 @@ gem 'bulma-rails', '~> 0.9.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'file_validators'
 gem 'simple_form', '~> 5.1'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
