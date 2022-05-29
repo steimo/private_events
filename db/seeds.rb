@@ -8,21 +8,17 @@
 
 Event.destroy_all
 
-Event.create!([{
-                title: Faker::Book.title,
-                description: Faker::Lorem.sentence(word_count: 1),
-                location: Faker::Address.street_address,
-                start_time: Faker::Date.between(from: '2022-01-01', to: '2022-12-30'),
-                end_time: Faker::Date.between(from: '2023-01-01', to: '2023-12-30'),
-                creator_id: 1
-              },
-               {
-                 title: Faker::Book.title,
-                 description: Faker::Lorem.sentence(word_count: 10),
-                 location: Faker::Address.street_address,
-                 start_time: Faker::Date.between(from: '2022-01-01', to: '2022-12-30'),
-                 end_time: Faker::Date.between(from: '2023-01-01', to: '2023-12-30'),
-                 creator_id: 1
-               }])
+Faker::Config.locale = :en
+10.times do
+  Event.create!([{
+                  title: Faker::Book.title.chomp('.'),
+                  description: Faker::Lorem.paragraph_by_chars(number: rand(50..235)),
+                  location: Faker::Address.full_address,
+                  start_time: Faker::Date.between(from: 2.days.ago, to: Date.today + 7.days),
+                  end_time: Faker::Date.between(from: Date.today + 7.days, to: Date.today + rand(5..15).days),
+                  creator_id: 1
+                }])
+end
 
+# Event.second.image.attach(io: File.open(File.join(Rails.root,'app/assets/images/avatar.jpg')), filename: 'avatar.jpg')
 p "Created #{Event.count} events"
