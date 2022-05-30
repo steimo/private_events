@@ -27,7 +27,16 @@ Faker::Config.locale = :en
                   start_time: Faker::Date.between(from: 5.days.ago, to: Date.today + 7.days),
                   end_time: Faker::Date.between(from: Date.today + 7.days, to: Date.today + rand(5..15).days),
                   creator_id: 1
-                }])
+                },
+                 {
+                   title: Faker::Book.title.chomp('.'),
+                   description: Faker::Lorem.paragraph_by_chars(number: rand(180..235)),
+                   location: Faker::Address.full_address,
+                   start_time: Faker::Date.between(from: 50.days.ago, to: DateTime.now),
+                   end_time: Faker::Date.between(from: 70.days.ago,
+                                                 to: 7.days.ago),
+                   creator_id: 1
+                 }])
 end
 
 users.each do |a|
