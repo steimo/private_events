@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  scope :past, -> { where('start_time < ?', Date.today) }
+  scope :upcoming, -> { where('start_time >= ?', Date.today) }
   belongs_to :creator, class_name: 'User'
   has_many :invitations, dependent: :destroy
   has_many :attendees, through: :invitations

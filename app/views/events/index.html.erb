@@ -2,13 +2,13 @@
   <div class="container my-6 mx-auto px-2 md:px-6">
     <p class="font-bold text-4xl my-4 text-gray-500">Upcoming Events:</p>
     <div class="flex flex-wrap">
-      <% @events.each do |event| %>
+      <% @events.upcoming.each do |event| %>
         <%= render event if !event.end_time.past? %>
       <% end %>
     </div>
     <p class="font-bold text-4xl my-4 text-gray-500">Past Events:</p>
     <div class="flex flex-wrap">
-      <% @events.each do |event| %>
+      <% @events.past.each do |event| %>
         <%= render event if event.end_time.past? %>
       <% end %>
     </div>
