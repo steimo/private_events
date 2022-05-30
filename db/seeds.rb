@@ -24,7 +24,7 @@ Faker::Config.locale = :en
                   title: Faker::Book.title.chomp('.'),
                   description: Faker::Lorem.paragraph_by_chars(number: rand(180..235)),
                   location: Faker::Address.full_address,
-                  start_time: Faker::Date.between(from: 2.days.ago, to: Date.today + 7.days),
+                  start_time: Faker::Date.between(from: 5.days.ago, to: Date.today + 7.days),
                   end_time: Faker::Date.between(from: Date.today + 7.days, to: Date.today + rand(5..15).days),
                   creator_id: 1
                 }])

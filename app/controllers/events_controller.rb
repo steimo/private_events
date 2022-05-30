@@ -60,6 +60,24 @@ class EventsController < ApplicationController
     end
   end
 
+  def attend
+    @event = Event.find(params[:id])
+    invitation = Invitation.new(attendee_id: current_user.id, event_id: @event.id)
+    if invitation.save
+      redirect_to @event, notice: 'You are now attending this event!'
+    else
+      redirect_to @event, alert: 'You are already attending this event!'
+    end
+  end
+
+  def unattend
+    @event = Event.find(params[:id])
+    invitation = Invitation.find_by(attendee_id: current_user.id, event_id: @event.id)
+    invitation.destroy
+
+    redirect_to @event, notice: 'You are no longer attending this event!'
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

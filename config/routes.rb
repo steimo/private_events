@@ -7,4 +7,11 @@ Rails.application.routes.draw do
   root 'events#index'
   get 'users/:user_id/created_events' => 'users#created_events', as: :user_events
   get 'events/:id/attendees' => 'events#attendees', :as => :event_attendees
+
+  resources :events do
+    member do
+      get 'attend'
+      get 'unattend'
+    end
+  end
 end
