@@ -1,11 +1,14 @@
-<h1>Hey whats up</h1>
-
 <div class="container  my-12 mx-auto px-2 md:px-12">
+  <p class="font-bold text-4xl my-4 text-gray-500">Hosted Events (<%= @events.select {|e| e.creator_id == current_user.id}.count %>):</p>
   <div class="flex flex-wrap -mx-1 lg:-mx-4">
-  <% @events.each do |event| %>
-      <%= render event %>
-    <br />
-  <% end %>
-</div>
+    <% @events.each do |event| %>
+      <%= render event if current_user.id == event.creator_id %>
+    <% end %>
   </div>
-
+  <p class="font-bold text-4xl my-4 text-gray-500">Attended Events (<%= current_user.attended_events.count %>):</p>
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <% current_user.attended_events.each do |event| %>
+      <%= render event %>
+    <% end %>
+  </div>
+</div>
