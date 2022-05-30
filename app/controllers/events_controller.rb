@@ -12,7 +12,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-  @event = current_user.created_events.build
+    @event = current_user.created_events.build
   end
 
   # GET /events/1/edit
@@ -31,6 +31,10 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def attendees
+    @attendees = Event.find(params[:id]).attendees
   end
 
   # PATCH/PUT /events/1 or /events/1.json

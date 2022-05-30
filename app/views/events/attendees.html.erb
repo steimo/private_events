@@ -1,0 +1,8 @@
+<div class="my-8 mx-8 flex flex-col bg-white rounded p-4 my-4 items-left shadow-lg border-r-8 border-orange-400 border-opacity-50 mb-4 md:mb-auto">
+        <h2 class="font-bold">Attendees <%= "(#{@attendees.count})" %></h2>
+        <p class="p-4  text-gray-600">
+          <% @attendees.each do |attendee| %>
+            <%= render partial: "attendee", locals: { attendee: attendee } %>
+          <% end %>
+        </p>
+      </div>
