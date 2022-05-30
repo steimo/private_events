@@ -1,5 +1,5 @@
 <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/5">
-  <div class="max-w-xs rounded-2xl border-l-4 border-opacity-50 <%= event.end_time.past? ? "border-gray-500" : "border-orange-400" %> overflow-hidden shadow-lg hover:shadow-2xl">
+  <div class="max-w-xs rounded-2xl border-l-4 border-opacity-50 <%= event.start_time.past? ? "border-gray-500" : "border-orange-400" %> overflow-hidden shadow-lg hover:shadow-2xl">
     <%= link_to event do %>
       <% if event.image.present? %>
         <div class="bg-white rounded-t-lg overflow-hidden mb-2">
