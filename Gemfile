@@ -11,8 +11,8 @@ gem 'rdoc'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'pg', group: :production
+gem 'sqlite3', group: %i[development test]
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -52,9 +52,9 @@ gem 'bootsnap', require: false
 
 gem 'bulma-rails', '~> 0.9.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'file_validators'
 gem 'simple_form', '~> 5.1'
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
