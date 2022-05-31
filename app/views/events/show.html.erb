@@ -36,7 +36,7 @@
       <div class="my-4 text-gray-400">
         <% if user_signed_in? && (current_user.id == @event.creator_id) %>
           <div class="flex justify-around mx-4">
-            <%= link_to "Edit event", edit_event_path(@event), class:"mr-4" %> |
+            <%= link_to "Edit event", edit_event_path(@event), class:"mr-4", data: { turbo: "false" } %> |
             <%= button_to "Destroy event", @event, method: :delete, class: "ml-4" %>
           </div>
         <% end %>
