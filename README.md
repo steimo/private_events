@@ -1,6 +1,6 @@
 <h1 style="margin-top: 0px;">Eventlite</h1>
 
-<p>This project involves building a private website with similar functionality to [Eventbrite](https://www.eventbrite.com/) where users can create and manage events and attend events hosted by other users.</p>
+<p>This project involves building a private website with similar functionality to <a href="(https://www.eventbrite.com/)">Eventbrite</a> where users can create and manage events and attend events hosted by other users.</p>
 
 ### Overview:
 
