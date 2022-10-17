@@ -28,9 +28,6 @@ You can try it out [here](https://shielded-everglades-35385.herokuapp.com/).
 
 - [File Validators](https://github.com/musaffa/file_validators) - adds file size and content type validations to ActiveModel.
 
-### Contact me:
-
-vladyslav.kolomiets@protonmail.com
 
 ### Contributing:
 
