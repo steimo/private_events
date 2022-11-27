@@ -7,9 +7,6 @@
 The application focuses on the use of ActiveRecord's associations by requiring many-to-many relationships, foreign keys and custom class names. A user can create events. A user can attend many events. An event can be attended by many users. Events take place at a specific date and at a location. Creators of an event can edit or delete their events as well. User can create account with an email and password (authentication and authorization system is set up through the [Devise](https://github.com/heartcombo/devise) gem).
 
 
-### Demo:
-You can try it out [here](https://shielded-everglades-35385.herokuapp.com/).
-
 ### Gems used:
 
 - [Tailwindcss](https://tailwindcss.com/) - CSS framework.
